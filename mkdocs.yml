@@ -1,0 +1,11 @@
+site_name: warp_control Documentation
+
+nav:
+  - Home: README.md
+  - Architecture: docs/architecture.md
+  - API Reference: docs/api_reference.md
+  - Deployment: docs/deployment.md
+  - Troubleshooting: docs/troubleshooting.md
+
+theme: material
+
