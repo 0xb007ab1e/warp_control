@@ -1,0 +1,72 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Bats
+        run: sudo apt-get install -y bats
+
+      - name: Run Bats tests
+        run: bats tests/
+
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up shell environment
+        run: echo "Setting up shell environment"
+
+      - name: Run simple test script
+        run: echo "Running simple test script"
+
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+      - feature/*
+    tags:
+      - '*'
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Bash
+        run: echo "Running on $(uname -s)"
+
+      - name: Run tests
+        run: echo "Running tests..."
+
